@@ -1,39 +1,46 @@
-  <template>
-        <el-table
-                :data="tableData"
-                border
-                height="350"
-                style="width: 100%"
-        @selection-change="handleSelectionChange">
-        <el-table-column
-                type="selection"
-                width="55">
-        </el-table-column>
-        <el-table-column
-                inline-template
-                sortable
-                label="生日"
-                width="120">
-            <div>{{ row.date }}</div>
-        </el-table-column>
-        <el-table-column
-                inline-template
-                label="姓名"
-                width="120">
+<template>
+	<el-table
+			:data="tableData"
+			v-loading.body="loading"
+			element-loading-text="拼命加载中..."
+			border
+			stripe
+			height=350
+			style="width: 100%"
+			@row-dblclick="handDbl"
+			@selection-change="handleSelectionChange">
+		<el-table-column
+				type="selection"
+				width="55">
+		</el-table-column>
+		<el-table-column
+				inline-template
+				sortable
+				label="生日"
+				width="160">
+			<div>
+				<el-icon name="time"></el-icon>
+				<span style="margin-left: 10px">{{ row.date }}</span>
+			</div>
+		</el-table-column>
+		<el-table-column
+				inline-template
+				label="姓名"
+				width="120">
 			<el-popover trigger="hover" placement="top">
-					<p>姓名: {{ row.name }}</p>
-					<p>住址: {{ row.address }}</p>
-					<div slot="reference" class="name-wrapper">
-					  <el-tag>{{ row.name }}</el-tag>
-					</div>
-		    </el-popover>
-        </el-table-column>
-         <el-table-column
+				<p>姓名: {{ row.name }}</p>
+				<p>住址: {{ row.address }}</p>
+				<div slot="reference" class="name-wrapper">
+					<el-tag>{{ row.name }}</el-tag>
+				</div>
+			</el-popover>
+		</el-table-column>
+		<el-table-column
 				prop="qq"
 				label="QQ"
 				width="120">
 		</el-table-column>
-         <el-table-column
+		<el-table-column
 				prop="mobile"
 				label="手机"
 				width="160">
@@ -48,40 +55,42 @@
 				label="毕业学校"
 				width="160">
 		</el-table-column>
-        <el-table-column
-                prop="address"
-                label="地址"
-                show-overflow-tooltip>
-        </el-table-column>
-        <el-table-column
-              prop="education"
-              label="分类"
-              width="180"
-              :filters="[{ text: '本科', value: '本科' }, { text: '专科', value: '专科' }]"
-              :filter-method="filterEducation"
-              inline-template>
-              <el-tag :type="row.education === '本科' ||row.education == '专科' ? 'primary' : 'success'" close-transition>{{row.education}}</el-tag>
-            </el-table-column>
-        <el-table-column
-              :context="_self"
-              inline-template
-              fixed="right"
-              width="160"
-              align="center"
-              label="操作">
-              <div>
-                <el-button
-                  size="small"
-                  @click="handleEdit($index, row)">
-                  编辑
-                </el-button>
-                <el-button
-                  size="small"
-                  type="danger"
-                  @click="handleDelete($index, row)">
-                  删除
-                </el-button>
-              </div>
+		<el-table-column
+				prop="address"
+				label="地址"
+				show-overflow-tooltip>
+		</el-table-column>
+		<el-table-column
+				prop="education"
+				label="分类"
+				width="180"
+				:filters="[{ text: '本科', value: '本科' }, { text: '专科', value: '专科' }]"
+				:filter-method="filterEducation"
+				inline-template>
+			<el-tag :type="row.education === '本科' ||row.education == '专科' ? 'primary' : 'success'" close-transition>
+				{{row.education}}
+			</el-tag>
+		</el-table-column>
+		<el-table-column
+				:context="_self"
+				inline-template
+				fixed="right"
+				width="160"
+				align="center"
+				label="操作">
+			<div>
+				<el-button
+						size="small"
+						@click="handleEdit($index, row)">
+					编辑
+				</el-button>
+				<el-button
+						size="small"
+						type="danger"
+						@click="handleDelete($index, row)">
+					删除
+				</el-button>
+			</div>
 		</el-table-column>
 	</el-table>
 </template>
@@ -94,7 +103,6 @@
   }
 </style>
 <script>
-
   export default {
     data() {
       return {
@@ -179,6 +187,7 @@
 		  college:'加里顿大学',
           address: '上海市普陀区金沙江路 1518 弄'
         }],
+        loading: true,
         multipleSelection: []
       }
     },
@@ -188,6 +197,12 @@
       },
       handleClick(){
 
+      },
+      handDbl(row, event){
+		this.$message({
+			type: 'info',
+			message: row.name+':'+row.address
+		  });
       },
       filterEducation(value, row) {
 	    return row.education === value;
@@ -216,6 +231,24 @@
 		  });
 		});
 	  }
+    },
+    mounted(){
+		setTimeout(() => {
+			  this.loading =false;
+			}, 3000);
     }
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
 </script>

@@ -101,6 +101,16 @@
   .el-table .positive-row {
 	background: #e2f0e4;
   }
+
+
+
+
+
+
+
+
+
+
 </style>
 <script>
   export default {
@@ -234,21 +244,9 @@
     },
     mounted(){
 		setTimeout(() => {
-			  this.loading =false;
+		  this.loading =false;
 			}, 3000);
     }
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
 </script>

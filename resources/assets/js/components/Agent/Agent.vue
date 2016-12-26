@@ -101,16 +101,6 @@
   .el-table .positive-row {
 	background: #e2f0e4;
   }
-
-
-
-
-
-
-
-
-
-
 </style>
 <script>
   export default {

@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -19,10 +18,25 @@ import 'element-ui/lib/theme-default/index.css';
 import VueRouter from 'vue-router'
 import App from './components/App.vue';
 
+import Agent from './components/Agent/Agent.vue';
+import NotFoundComponent from './components/404/NotFoundComponent.vue';
+
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 
-const app = new Vue({
-  el: '#app',
-  render: h => h(App)
+const router = new VueRouter({
+  mode  : 'history',
+  routes: [
+    {path: '/home', component: Agent},
+    { path: '*', component: NotFoundComponent }
+  ]
 });
+
+//
+// const app = new Vue({
+//   el    : '#app',
+//   render: h => h(App)
+// });
+
+const app = new Vue(Vue.util.extend({router}, App)).$mount('#app');
+

@@ -80,12 +80,12 @@
 				label="操作">
 			<div>
 				<el-button
-						size="small"
+						size="mini"
 						@click="handleEdit($index, row)">
 					编辑
 				</el-button>
 				<el-button
-						size="small"
+						size="mini"
 						type="danger"
 						@click="handleDelete($index, row)">
 					删除

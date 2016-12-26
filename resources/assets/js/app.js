@@ -26,9 +26,10 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   mode  : 'history',
+  base  : __dirname,
   routes: [
-    {path: '/home', component: Agent},
-    { path: '*', component: NotFoundComponent }
+    {path: '/agent', component: Agent}
+    // {path: '*', component: NotFoundComponent}
   ]
 });
 

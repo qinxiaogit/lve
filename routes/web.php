@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('example', function () {
+Route::get('agent', function () {
     return view('welcome');
 });

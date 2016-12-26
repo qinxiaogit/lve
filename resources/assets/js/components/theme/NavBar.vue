@@ -1,6 +1,6 @@
 <template>
 	<el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-		<el-menu-item index="/">
+		<el-menu-item index="agent">
 			Home
 		</el-menu-item>
 		<el-submenu index="2">

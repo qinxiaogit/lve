@@ -8,7 +8,6 @@
         <div  class="text item">三山半落青天外，二水中分白鹭洲</div>
         <div  class="text item">总为浮云能蔽日，长安不见使人愁</div>
     </el-card>
-
     <!--<el-card class="box-card">-->
         <!--<div slot="header" class="clearfix">-->
             <!--<span style="line-height: 36px;">无题     李商隐</span>-->
@@ -23,6 +22,6 @@
 </style>
 <script>
 export default {
-    
+
 }
 </script>

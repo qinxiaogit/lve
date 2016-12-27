@@ -34,6 +34,8 @@ const router = new VueRouter({
   routes: [
     {path: '/', component: Home},
     {path: '/source', component: Agent},
+    {path: '/trace', component: Agent},
+    {path: '/community', component: Agent},
     {path: '/client', component: Client},
     {path: '*', component: NotFound}
   ]

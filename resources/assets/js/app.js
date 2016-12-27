@@ -18,8 +18,10 @@ import 'element-ui/lib/theme-default/index.css';
 import VueRouter from 'vue-router'
 import App from './components/App.vue';
 
+
+import Home from './components/Home/Home.vue';
 import Agent from './components/Agent/Agent.vue';
-import NotFoundComponent from './components/404/NotFoundComponent.vue';
+import NotFound from './components/System/NotFound.vue';
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
@@ -28,8 +30,9 @@ const router = new VueRouter({
   // mode  : 'history',
   base  : __dirname,
   routes: [
+    {path: '/', component: Home},
     {path: '/agent', component: Agent},
-    {path: '*', component: NotFoundComponent}
+    {path: '*', component: NotFound}
   ]
 });
 

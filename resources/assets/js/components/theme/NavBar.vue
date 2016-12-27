@@ -1,21 +1,21 @@
 <template>
 	<el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-		<el-menu-item index="agent">
+		<el-menu-item index="/">
 			Home
 		</el-menu-item>
 		<el-submenu index="2">
 			<template slot="title">Source</template>
-			<el-menu-item index="2-1">
+			<el-menu-item index="source">
 				Source
 			</el-menu-item>
-			<el-menu-item index="2-2">
+			<el-menu-item index="trace">
 				Trace
 			</el-menu-item>
-			<el-menu-item index="2-3">
+			<el-menu-item index="community">
 				Community
 			</el-menu-item>
 		</el-submenu>
-		<el-menu-item index="3">
+		<el-menu-item index="client">
 			Client
 		</el-menu-item>
 	</el-menu>
@@ -27,7 +27,6 @@ const router = new VueRouter();
     methods: {
       handleSelect(key, keyPath) {
       	router.push(key);
-        console.log(key, keyPath);
       }
     }
   }

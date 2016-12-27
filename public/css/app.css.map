@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA","file":"app.css","sourcesContent":[]}
+{"version":3,"sources":["custom.scss"],"names":[],"mappings":"AAAA;EACE,UAAU;CACX","file":"app.css","sourcesContent":["body {\n  margin: 0;\n}"]}

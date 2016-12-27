@@ -25,19 +25,18 @@ Vue.use(ElementUI);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode  : 'history',
+  // mode  : 'history',
   base  : __dirname,
   routes: [
-    {path: '/agent', component: Agent}
-    // {path: '*', component: NotFoundComponent}
+    {path: '/agent', component: Agent},
+    {path: '*', component: NotFoundComponent}
   ]
 });
 
-//
-// const app = new Vue({
-//   el    : '#app',
-//   render: h => h(App)
-// });
 
-const app = new Vue(Vue.util.extend({router}, App)).$mount('#app');
+const app = new Vue({
+  el    : '#app',
+  router,
+  render: h => h(App)
+});
 

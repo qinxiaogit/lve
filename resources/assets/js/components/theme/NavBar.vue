@@ -1,12 +1,12 @@
 <template>
 	<el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
 		<el-menu-item index="/">
-			Home
+			首页
 		</el-menu-item>
 		<el-submenu index="2">
-			<template slot="title">Source</template>
+			<template slot="title">组件</template>
 			<el-menu-item index="source">
-				Source
+				列表
 			</el-menu-item>
 			<el-menu-item index="trace">
 				Trace
@@ -16,7 +16,7 @@
 			</el-menu-item>
 		</el-submenu>
 		<el-menu-item index="client">
-			Client
+			表单
 		</el-menu-item>
 	</el-menu>
 </template>

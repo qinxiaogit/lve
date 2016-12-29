@@ -21,9 +21,9 @@ import App from './components/App.vue';
 
 import Home from './components/Home/Home.vue';
 import Agent from './components/Agent/Agent.vue';
-import NotFound from './components/System/NotFound.vue';
 import Client from './components/Client/Client.vue';
-
+import Source from './components/Source/Source.vue';
+import NotFound from './components/System/NotFound.vue';
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
@@ -33,7 +33,7 @@ const router = new VueRouter({
   base  : __dirname,
   routes: [
     {path: '/', component: Home},
-    {path: '/source', component: Agent},
+    {path: '/source', component: Source},
     {path: '/trace', component: Agent},
     {path: '/community', component: Agent},
     {path: '/client', component: Client},
@@ -41,10 +41,8 @@ const router = new VueRouter({
   ]
 });
 
-
 const app = new Vue({
   el    : '#app',
   router,
   render: h => h(App)
 });
-

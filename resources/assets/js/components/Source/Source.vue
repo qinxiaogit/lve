@@ -24,12 +24,12 @@
            Page
         },
         methods:{
-        	
+
         },
-        created: function () {
-			this.$on('search', function (params) {
-				console.log(params)
-			})
+        events: {
+        	'search-source':function(params){
+        		console.log(params)
+        	}
     	}
     }
 </script>

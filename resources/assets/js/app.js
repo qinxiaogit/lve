@@ -16,8 +16,9 @@ import 'element-ui/lib/theme-default/index.css';
  */
 
 import VueRouter from 'vue-router'
-import App from './components/App.vue';
+import Vuex from 'vuex'
 
+import App from './components/App.vue';
 
 import Home from './components/Home/Home.vue';
 import Agent from './components/Agent/Agent.vue';
@@ -27,6 +28,8 @@ import NotFound from './components/System/NotFound.vue';
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
+Vue.use(Vuex);
+
 
 const router = new VueRouter({
   // mode  : 'history',
@@ -42,7 +45,8 @@ const router = new VueRouter({
 });
 
 const app = new Vue({
-  el    : '#app',
-  router,
-  render: h => h(App)
+  el        : '#app',
+  router,  //注入router到子组件中
+  //store, // 把 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件
+  render    : h => h(App)
 });

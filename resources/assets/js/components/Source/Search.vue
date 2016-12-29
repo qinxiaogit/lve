@@ -29,9 +29,13 @@
     },
     methods: {
       onSubmit() {
-       this.$emit('search',this.search);
-       console.log(this.search);
+       this.$emit('search-source', this.search);
       }
+    },
+    created:function(){
+    	this.$on('search-source',function(params){
+			console.log(params);
+    	});
     }
   }
 

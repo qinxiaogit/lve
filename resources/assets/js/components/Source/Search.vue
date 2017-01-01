@@ -29,22 +29,14 @@
     },
     methods: {
       onSubmit() {
+       this.$store.commit('increment');
        this.$emit('search-source', this.search);
       }
     },
     created:function(){
     	this.$on('search-source',function(params){
-			console.log(params);
+			console.log( this.$store.state.count)
     	});
     }
   }
-
-
-
-
-
-
-
-
-
 </script>

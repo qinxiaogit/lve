@@ -11,3 +11,5 @@ Homestead.yaml
 /resources/assets/node_modules
 /resources/assets/element-variables.css
 /resources/assets/theme
+/public/css
+/public/js

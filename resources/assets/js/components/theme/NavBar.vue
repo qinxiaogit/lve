@@ -20,6 +20,11 @@
 		</el-menu-item>
 	</el-menu>
 </template>
+<style>
+	.el-menu-demo{
+		border-radius:0;
+	}
+</style>
 <script>
 import VueRouter from 'vue-router';
 const router = new VueRouter();

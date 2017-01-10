@@ -12,6 +12,9 @@ const Source = {
   actions  : {
     create (source) {
       source.commit('add')
+    },
+    search(source){
+      source.commit('search')
     }
   },
   getters  : {

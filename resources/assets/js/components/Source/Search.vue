@@ -29,6 +29,7 @@
     },
     methods: {
       onSubmit() {
+      console.log(this);
        this.$store.commit('increment');
        this.$emit('search-source', this.search);
       }

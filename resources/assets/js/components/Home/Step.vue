@@ -13,6 +13,12 @@
             <el-step title="鸡"></el-step>
             <el-step title="狗"></el-step>
             <el-step title="猪"></el-step>
+            <el-step title="1"></el-step>
+            <el-step title="2"></el-step>
+            <el-step title="3"></el-step>
+            <el-step title="4"></el-step>
+            <el-step title="5"></el-step>
+            <el-step title="6"></el-step>
         </el-steps>
         <el-button style="margin-top: 20px;" @click="next" size="small">变</el-button>
     </div>
